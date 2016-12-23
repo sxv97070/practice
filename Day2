@@ -1,0 +1,40 @@
+.Net Framework:
+ 
+•	Application Development Technology - This includes different application technologies such as ASP.NET, WinForms, Web Service etc.
+•	Class Libraries - This includes extensive set of class libraries such as Data Access, Regular Expression, XML, Queuing Support, Directory Service etc.
+•	Base Class Library - This is huge class libraries which include Collections, Thread, Code Generation, IO, Reflection and security.
+•	Common Language Runtime - This is the runtime environment of .NET Framework which is responsible to execute the managed code on machine.
+ 
+MSIL:
+CLR takes program source code as input, compile and convert into the MSIL (Microsoft Intermediate Language) which consists of CPU- independent code and instructions which is platform independent.
+
+CLR:
+CLR handles the execution of code and provides useful services for the implementation of the program. In addition to executing code, CLR provides services such as memory management, thread management, security management, code verification, compilation, and other system services.
+ 
+•	Class loader - This will load classes into CLR.
+•	IL Compiler - Convert MSIL code into native code.
+•	Code manager - Manages the code during execution.
+•	Garbage collector - This performs automatic memory management.
+•	Security engine - This enforces security restrictions as code level security folder level and machine level security.
+•	Type checker - Enforces strict type checking.
+•	Thread support - Provides multithreading support to applications.
+•	Exception manager - Provides a mechanism to handle the run-time exceptions handling.
+•	Debug engine - Allows developer to debug different types of applications.
+•	COM Marshaler - Allows .NET applications to exchange data with COM applications.
+•	Base class library - Provides the classes (types) that the applications need at run time.
+
+
+JIT:
+JIT converts the MSIL code to native code which is CPU-specific code that runs on the same computer architecture as the JIT compiler and stores the resulting native code in memory so that it is accessible for subsequent calls in the context of that process. 
+GAC:
+Global Assembly Cache is a place where code libraries(DLL’s) are stored so they are accessible by all applications running on that machine.
+
+DLL & EXE:
+1. EXE is an extension used for executable files while DLL is the extension for a dynamic link library.
+2. An EXE file can be run independently while a DLL is used by other applications.
+3. An EXE file defines an entry point while a DLL does not.
+4. A DLL file can be reused by other applications while an EXE cannot.
+5. A DLL would share the same process and memory space of the calling application while an EXE creates its separate process and memory space. 
+
+Portability:
+Portability is a characteristic attributed to a computer program if it can be used in an operating system other than the one in which it was created without requiring major rework
