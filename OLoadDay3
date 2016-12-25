@@ -1,0 +1,119 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OverloadingDay3
+{
+
+    class parent
+    {
+        public virtual int sum(int a, int b)
+        {
+            return a + b;
+        }
+
+        protected virtual int sum(int a ,int b, int c)         //method overloading
+        {
+            return a + b + c;
+        }
+    }
+
+    class child:parent
+    {
+        public override int sum(int a, int b)              // method overriding
+        {
+            Console.WriteLine("method in child");
+            return base.sum(a, b);
+        }
+
+        internal int accmod()
+        {
+            int k = sum(1, 2, 3);
+            return k;
+        } 
+    }
+
+    public class student
+    {
+        public int rollno;
+        public string name;
+        
+    }
+
+    public class alist
+    {
+        int ln = 3;
+        ArrayList arrList = new ArrayList();
+        
+        public int arrmeth() //array list
+        {
+            arrList.Add(1);
+            arrList.Add(2);
+            arrList.Add(ln); //Boxing
+            int nl = (int)arrList[2]; //unboxing
+
+            return arrList.Count;
+        }
+
+        Hashtable htable = new Hashtable();
+
+        public void hmeth()  // hashtable
+        {
+            htable.Add(1, "one");
+            htable.Add(2, "two");
+            
+            for (int i = 1; i <= htable.Count; i++)
+            {
+                
+                Console.WriteLine((string)htable[i]);
+               
+            }
+            
+            
+        }
+
+        public void stbuilder()   //string builder
+        {
+            StringBuilder sb = new StringBuilder("abc");
+            sb.Append("cba");
+            Console.WriteLine(sb);
+
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+               student[] std = new student[3];         //student array
+               int i = 0;
+               while(i <3)
+                   {
+                   std[i] = new student();
+                   Console.WriteLine("Enter Roll number");
+
+                   std[i].rollno = Convert.ToInt32(Console.ReadLine());
+                   Console.WriteLine("Enter Name");
+                   std[i].name = Console.ReadLine();
+                   i++;
+               }
+
+               foreach(student st in std)
+               {
+                   Console.WriteLine(st.rollno +" \n" +st.name);
+               }
+
+            alist al = new alist();
+            Console.WriteLine( "number of elements in array list are " + al.arrmeth());  
+            
+            al.hmeth();
+            al.stbuilder();
+            
+
+            Console.ReadLine();
+        }
+    }
+}
