@@ -1,0 +1,20 @@
+Stack:
+Static memory allocation. Variables stored on stack are stored directly to memory which reduces the access time.
+You can use the stack if you know exactly how much data you need to allocate before compile time and it is not too big
+Heap:
+Dynamic memory allocation. Variables allocated on the heap have their memory allocated at run time and accessing this memory is a bit slower, but the heap size is only limited by the size of virtual memory.
+You can use heap if you don't know exactly how much data you will need at runtime or if you need to allocate a lot of data.
+Garbage collection:
+GC works on managed heap, which is nothing but a block of memory to store objects, when garbage collection process is put in motion, it checks for dead objects and the objects which are no longer used, then it compacts the space of live object and tries to free more memory.
+Extension method:
+An extension method is a static method to the existing static class. We call an extension method in the same general way; there is no difference in calling.
+If you want to add new methods to a type and you don't have the source code for it, then the solution is to use and implement extension methods of that type.
+If you create extension methods that have the same signature methods as the type you are extending, then the extension methods will never be called.
+
+Delegates:
+A delegate is a reference type variable that holds the reference to a method. The reference can be changed at runtime.
+A method that is going to assign to delegate must have same signature as delegate.
+Delegate pointing to multiple methods is called multicast delegate.
+
+
+
