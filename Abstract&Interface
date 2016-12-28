@@ -1,0 +1,77 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace abstractInterfaces
+{
+
+    abstract class Repositry
+    {
+        public int i = 1;
+
+        public abstract int get();
+
+        public virtual void set(int j)
+        {
+            this.i = j;
+        }
+
+
+    }
+
+    class abschild : Repositry
+    {
+        public override int get()
+        {
+            return i;
+        }
+
+        
+    }
+
+    interface iPrint
+    {
+        void print(int i, string st);
+    }
+
+    interface iFax
+    {
+        void fax(int i);
+    }
+    class intImpl:iPrint,iFax
+    {
+        Hashtable ht = new Hashtable(3);
+
+        
+       public void print(int i, string st)
+        {
+            ht.Add(i, st);
+            Console.WriteLine("From print method  {0} is the key and {1} is the value ",i,st);
+
+        }
+        public void fax(int i)
+        {
+            ht.Remove(i);
+            Console.WriteLine("from fax method  key removed is " + i);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            abschild ab = new abschild();
+            Console.WriteLine(ab.get());
+            int k = int.Parse(Console.ReadLine());
+            ab.set(k);
+            Console.WriteLine(ab.get());
+            intImpl il = new intImpl();
+            il.print(10,"ten");
+            il.fax(10);
+            
+            Console.ReadLine();
+        }
+    }
+}
