@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StaticNullable
+{
+    public static class stclass
+    {
+        public static int? x;
+        public static int stmethod(int y)
+        {
+            int z = x ?? 0;
+            if (z == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return z * y;
+            }
+            
+        }
+    }
+   
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         Console.WriteLine(stclass.stmethod(2));
+            Console.WriteLine(stclass.x.HasValue);
+            try
+            {
+                Console.WriteLine(stclass.x.Value);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            finally
+            {
+                stclass.x = 20;
+            }
+            
+            Console.WriteLine(stclass.stmethod(2));
+            Console.WriteLine(stclass.x.HasValue);
+            Console.WriteLine(stclass.x.Value);
+
+            var anontype = new { one = "one",two=  2, three =3 };
+            Console.WriteLine(anontype.one);
+            Console.WriteLine(anontype.two);
+            Console.WriteLine(anontype.three);
+
+
+            Console.ReadLine();
+        }
+    }
+}
