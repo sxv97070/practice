@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace dispoosable
+{
+    class Program : IDisposable
+    {
+        int x, y;
+        static Program()
+        {
+            Console.WriteLine("Inside ststic constructor");
+            
+        }
+       public Program(int a, int b)
+        {
+            this.x = a;
+            this.y = b;
+        }
+        public Program()
+        {
+            this.x = 0;
+            this.y = 0;
+        }
+        ~Program()
+        {
+            Console.WriteLine("this is in destructor");
+            Dispose();
+            
+        }
+        public void Dispose()
+        {
+            Console.WriteLine("this is in dispose");
+            Console.ReadLine();
+        }
+        static void Main(string[] args)
+        {
+            Program pr = new Program();
+            Console.WriteLine(pr.x);
+            Program pr1 = new Program(1, 2);
+            Console.WriteLine(pr1.x);
+            
+        }
+    }
+}
